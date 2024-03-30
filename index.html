@@ -20,6 +20,28 @@
 	<!-- Import Style -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
+	<style>
+		/* Add custom styles for the navigation button */
+		.nav-toggle {
+			display: none;
+			font-size: 24px;
+			cursor: pointer;
+		}
+
+		@media screen and (max-width: 768px) {
+			.nav-toggle {
+				display: block;
+			}
+
+			.navbar-item ul {
+				display: none;
+			}
+
+			.navbar-item ul.show {
+				display: block;
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -27,7 +49,7 @@
 <nav class="navbar">
 	<div class="container">
 		<div class="navbar-bars">
-			<a href="#" class="navbar-title sidebar-toggle" style="padding: 0;"><i class="ion-navicon-round"></i></a>
+			<a href="#" class="navbar-title sidebar-toggle nav-toggle" style="padding: 0;"><i class="ion-navicon-round"></i></a>
         	<a href="index.html" class="navbar-title">Santorini Time</a>
 		</div>
 		<div class="navbar-item">
@@ -37,8 +59,6 @@
 			    <li><a href="photo.html">photo</a></li>
 				<li><a href="economy.html">Economics</a></li>
 			    <li><a data-slide="slides" data-slide-target="# "> </a></li>
-			    
-				
   		  	</ul>
 		</div>
 	</div>
@@ -46,47 +66,18 @@
 
 <!-- Sidebar -->
 <div class="sidebar">
-<ul class="sidebar-list">
-	<li><a href="" class="close"><span class="ion-android-close"></span></a></li>
-	<li class="sidebar-list-hover"><a href="index.html">Home</a></li>
-    <li class="sidebar-list-hover"><a href="destination.html">Destination</a></li>
-    <li class="sidebar-list-hover"><a href="photo.html">photo</a></li>
-   
-</ul>                    
+	<ul class="sidebar-list">
+		<li><a href="" class="close"><span class="ion-android-close"></span></a></li>
+		<li class="sidebar-list-hover"><a href="index.html">Home</a></li>
+    	<li class="sidebar-list-hover"><a href="destination.html">Destination</a></li>
+    	<li class="sidebar-list-hover"><a href="photo.html">photo</a></li>
+    </ul>                    
 </div>
 
 <!-- Sidebar Overlay -->
 <section class="sidebar-overlay"></section>
 
-<!-- Login Form -->
-
-<div class="login-form">
-	<div class="login-top">
-		<span class="close">&times;</span>
-	</div>
-	<div class="login">
-		<h3 class="text-center">
-			Bavel Log In
-		</h3>
-		<div class="form-input">
-			<label>Email</label> <br>
-			<input type="email" name="" class="form-control">
-		</div>
-		<div class="form-input">
-			<label>Password</label> <br>
-			<input type="password" name="" class="form-control">
-		</div>
-		<div class="form-input">
-			<button type="submit" class="btn btn-login">Log In</button>
-		</div>
-		<a href="" class="text-center">Don't have account ? Register now</a>
-	</div>
-</div>
-
-<div class="login-overlay"></div>
-
 <!-- Section Header -->
-
 <section class="section-header">
 	<div class="section-header-image">
 		<img src="santoriniimg.jpg" alt="Header">
@@ -94,16 +85,24 @@
 	<div class="container">
 		<div class="section-header-inner">
 			<div class="section-header-title">
-			
-				<h3 class="title">GREAT <br> SANTORINI <br>EXPERIENCE</h3>
-				
-				
+				<h3 class="title">GREAT <br> SANTORINI <br> EXPERIENCE</h3>
 				<a href="fun.html" class="btn btn-round btn-orange">See Our Vacation</a>
 			</div>
 			<div class="section-header-title-xs">
 				<h3 class="title">GREAT ART OF Santorini</h3>
+				<p>Telusuri Keindahan Santorini Yang <br> Belum Pernah Anda Temui Sebelumnya</p>
 				<a href="" class="btn btn-round btn-orange">See Our Vacation</a>
 			</div>
 		</div>
 	</div>
 </section>
+
+<script>
+	// Toggle mobile navigation menu
+	document.querySelector('.nav-toggle').addEventListener('click', function() {
+		document.querySelector('.navbar-item ul').classList.toggle('show');
+	});
+</script>
+
+</body>
+</html>
